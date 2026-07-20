@@ -1,20 +1,16 @@
 import { HISTORIA } from "@/app/config/constants";
 import { Eyebrow } from "@/view/components/Eyebrow";
 import { Reveal, RevealStagger, RevealItem } from "@/view/components/Reveal";
+import { HistoriaPhoto } from "./HistoriaPhoto";
 import img from "../../../../imgs/wedding.jpeg";
 
 export function Historia() {
   return (
     <section className="flex min-h-screen snap-start snap-always flex-col justify-center bg-cream px-6 py-[clamp(64px,10vw,110px)]">
       <div className="mx-auto grid max-w-[980px] grid-cols-1 items-center gap-[clamp(32px,6vw,64px)] md:grid-cols-2">
-        {/* Foto emoldurada */}
+        {/* Foto emoldurada — com tilt 3D + parallax + ken-burns (GSAP) */}
         <Reveal direction="right">
-          <div className="relative aspect-[4/5] border border-goldline bg-card p-3">
-            <div className="flex h-full w-full items-center justify-center">
-              {/* Substitua por <img src="/casal.jpg" ... /> */}
-            <img src={img} className="p-2"  />
-            </div>
-          </div>
+          <HistoriaPhoto src={img} />
         </Reveal>
 
         {/* Texto — entra elemento a elemento */}
