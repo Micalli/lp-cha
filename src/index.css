@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/*
+  Design tokens — paleta e tipografia do convite "Chá de Casa Nova"
+  (verde-oliva + dourado + creme, estética editorial de convite).
+  Mesma mecânica de tokens do design system: trocar aqui reflete em toda a LP.
+*/
+@theme {
+  /* Superfícies / neutros quentes */
+  --color-cream: #efe8d8; /* fundo geral */
+  --color-cream-light: #f7f2e6; /* fundo hero / cartões claros */
+  --color-card: #fbf8f1; /* cartões */
+  --color-sand: #e4dac2; /* gradiente hero */
+  --color-detail: #e6dcc4; /* seção de detalhes */
+
+  /* Verdes-oliva */
+  --color-olive: #6e7256; /* faixas escuras / botões */
+  --color-olive-deep: #5a5e44; /* hover de botão */
+  --color-olive-dark: #55583b; /* títulos / footer */
+
+  /* Texto */
+  --color-ink: #4e5138; /* corpo */
+  --color-ink-soft: #6a6b4e; /* corpo secundário */
+
+  /* Dourados */
+  --color-gold: #a98f52;
+  --color-gold-dark: #8b7a3e;
+  --color-goldline: #c6b889; /* bordas finas */
+  --color-border: #d8cfb8; /* bordas de cartão */
+
+  /* Claros sobre fundo escuro */
+  --color-cream-dim: #ded2ae;
+  --color-label: #c7be97;
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "EB Garamond", Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /*
+    Scroll-snap por seção — cada seção é um "slide" de tela cheia e a rolagem
+    para direto na próxima, sem parar no meio. Ativado só em telas grandes o
+    suficiente para uma seção caber inteira (evita "prender" conteúdo alto).
+  */
+  @media (min-width: 768px) and (min-height: 640px) {
+    html {
+      scroll-snap-type: y mandatory;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-snap-type: none;
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: #b7a05c;
+    color: var(--color-cream-light);
+  }
+
+  ::placeholder {
+    color: #a9a388;
+  }
+}
