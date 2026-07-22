@@ -18,7 +18,7 @@ export const EVENTO = {
       "https://maps.app.goo.gl/eGR4K7dnxZB19WMPA",
   },
   presentesUrl: "https://www.finalfeliz.de/brunohadassa",
-  rsvpPrazo: "15 de outubro de 2026",
+  rsvpPrazo: "25 de outubro de 2026",
   cidadeFooter: "SBC",
 } as const;
 
