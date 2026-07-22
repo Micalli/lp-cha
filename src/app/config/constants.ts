@@ -15,10 +15,9 @@ export const EVENTO = {
     linha1: "Rua Ana Maria, 07",
     linha2: "Vila Mariana — SBC",
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=" +
-      encodeURIComponent("Jardim Nascimento, São Bernardo do Campo - State of São Paulo, 09780-250"),
+      "https://maps.app.goo.gl/eGR4K7dnxZB19WMPA",
   },
-  presentesUrl: "#",
+  presentesUrl: "https://www.finalfeliz.de/brunohadassa",
   rsvpPrazo: "15 de outubro de 2026",
   cidadeFooter: "SBC",
 } as const;

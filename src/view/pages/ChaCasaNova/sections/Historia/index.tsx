@@ -1,6 +1,6 @@
 import { HISTORIA } from "@/app/config/constants";
 import { Eyebrow } from "@/view/components/Eyebrow";
-import { Reveal, RevealStagger, RevealItem } from "@/view/components/Reveal";
+import { RevealStagger, RevealItem } from "@/view/components/Reveal";
 import { HistoriaPhoto } from "./HistoriaPhoto";
 import img from "../../../../imgs/wedding.jpeg";
 
@@ -8,10 +8,8 @@ export function Historia() {
   return (
     <section className="flex min-h-screen snap-start snap-always flex-col justify-center bg-cream px-6 py-[clamp(64px,10vw,110px)]">
       <div className="mx-auto grid max-w-[980px] grid-cols-1 items-center gap-[clamp(32px,6vw,64px)] md:grid-cols-2">
-        {/* Foto emoldurada — com tilt 3D + parallax + ken-burns (GSAP) */}
-        <Reveal direction="right">
-          <HistoriaPhoto src={img} />
-        </Reveal>
+        {/* Foto emoldurada — revelação por máscara (ScrollTrigger) + tilt 3D + parallax + ken-burns (GSAP) */}
+        <HistoriaPhoto src={img} />
 
         {/* Texto — entra elemento a elemento */}
         <RevealStagger>

@@ -11,25 +11,17 @@ const inputBase =
 export function Rsvp() {
   const {
     name,
-    going,
     guests,
     submitted,
-    isGoing,
+    isLoading,
+    hasError,
     confirmTitle,
     confirmMsg,
     setName,
     setGuests,
-    pickYes,
-    pickNo,
     handleSubmit,
     resetForm,
   } = useRsvpController();
-
-  const choiceBtn = (active: boolean, activeCls: string) =>
-    cn(
-      "flex-1 font-body text-[14px] uppercase tracking-[0.1em] px-3 py-4 border transition-all duration-150 cursor-pointer hover:border-gold",
-      active ? activeCls : "bg-white text-ink-soft border-[#C9C0A6]",
-    );
 
   return (
     <section className="flex min-h-screen snap-start snap-always flex-col justify-center bg-olive px-6 py-[clamp(40px,6vw,56px)]">
@@ -78,59 +70,36 @@ export function Rsvp() {
                 className={cn(inputBase, "mb-6")}
               />
 
-              {/* Presença */}
-              <label className={cn(fieldLabel, "mb-3.5")}>
-                Você vai comparecer?
-              </label>
-              <div className="mb-6 flex gap-3.5">
-                <button
-                  type="button"
-                  onClick={pickYes}
-                  className={choiceBtn(
-                    going === "yes",
-                    "bg-olive text-cream-light border-olive",
-                  )}
-                >
-                  Sim, vou!
-                </button>
-                <button
-                  type="button"
-                  onClick={pickNo}
-                  className={choiceBtn(
-                    going === "no",
-                    "bg-olive-dark text-cream-light border-olive-dark",
-                  )}
-                >
-                  Não poderei
-                </button>
-              </div>
-
               {/* Acompanhantes */}
-              {isGoing && (
-                <div>
-                  <label className={cn(fieldLabel, "mb-2.5")}>
-                    Quantidade de acompanhantes
-                  </label>
-                  <select
-                    value={guests}
-                    onChange={(e) => setGuests(e.target.value)}
-                    className={cn(inputBase, "mb-6 appearance-none")}
-                  >
-                    {GUEST_OPTIONS.map((g) => (
-                      <option key={g.value} value={g.value}>
-                        {g.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              )}
+              <label className={cn(fieldLabel, "mb-2.5")}>
+                Quantidade de acompanhantes
+              </label>
+              <select
+                value={guests}
+                onChange={(e) => setGuests(e.target.value)}
+                className={cn(inputBase, "mb-6 appearance-none")}
+              >
+                {GUEST_OPTIONS.map((g) => (
+                  <option key={g.value} value={g.value}>
+                    {g.label}
+                  </option>
+                ))}
+              </select>
 
               <button
                 type="submit"
-                className="w-full cursor-pointer border border-olive bg-olive px-4 py-5 font-body text-[14px] uppercase tracking-[0.22em] text-cream-light transition-colors duration-150 hover:bg-olive-dark hover:border-olive-dark"
+                disabled={isLoading}
+                className="w-full cursor-pointer border border-olive bg-olive px-4 py-5 font-body text-[14px] uppercase tracking-[0.22em] text-cream-light transition-colors duration-150 hover:bg-olive-dark hover:border-olive-dark disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Confirmar presença
+                {isLoading ? "Enviando…" : "Confirmar presença"}
               </button>
+
+              {hasError && (
+                <p className="mt-4 text-center font-body text-[14px] text-[#a34a3a]">
+                  Não conseguimos enviar sua confirmação. Tente novamente em
+                  instantes.
+                </p>
+              )}
             </form>
           )}
         </Reveal>
