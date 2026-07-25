@@ -11,6 +11,9 @@ export function Footer() {
         <div className="mt-3.5 font-body text-[11px] uppercase tracking-[0.28em] text-[#A9A57F]">
           {EVENTO.dataExtenso} · {EVENTO.cidadeFooter}
         </div>
+        <div className="mt-3.5 font-body text-[11px] uppercase tracking-[0.28em] text-[#A9A57F]">
+          {EVENTO.horario}
+        </div>
       </Reveal>
     </footer>
   );

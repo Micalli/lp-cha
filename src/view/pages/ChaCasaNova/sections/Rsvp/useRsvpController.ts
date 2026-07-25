@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Forminit } from "forminit";
+import { EVENTO } from "@/app/config/constants";
 
 type Status = "idle" | "loading" | "error";
 
@@ -29,6 +30,9 @@ const FORM_ID = import.meta.env.VITE_FORMINIT_FORM_ID ?? "4sqhwvytphk";
  */
 export function useRsvpController() {
   const [state, setState] = useState<State>(INITIAL);
+
+  // Prazo encerrado → esconde o form e mostra aviso.
+  const encerrado = Date.now() > EVENTO.rsvpPrazoData.getTime();
 
   const first = (state.submittedName || "").trim().split(" ")[0];
   const confirmTitle = state.submitted ? `Que alegria, ${first}!` : "";
@@ -69,6 +73,7 @@ export function useRsvpController() {
   return {
     name: state.name,
     guests: state.guests,
+    encerrado,
     submitted: state.submitted,
     isLoading: state.status === "loading",
     hasError: state.status === "error",

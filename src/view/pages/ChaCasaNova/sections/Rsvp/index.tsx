@@ -12,6 +12,7 @@ export function Rsvp() {
   const {
     name,
     guests,
+    encerrado,
     submitted,
     isLoading,
     hasError,
@@ -33,13 +34,25 @@ export function Rsvp() {
           <h2 className="mb-3 font-display text-[clamp(28px,5vw,44px)] font-semibold text-cream-light">
             Você vem celebrar?
           </h2>
-          <p className="mb-8 font-body text-[clamp(15px,2vw,17px)] leading-[1.7] text-[#D9D2B8]">
-            Por favor, confirme até {EVENTO.rsvpPrazo}.
-          </p>
+          {!encerrado && (
+            <p className="mb-8 font-body text-[clamp(15px,2vw,17px)] leading-[1.7] text-[#D9D2B8]">
+              Por favor, confirme até {EVENTO.rsvpPrazo}.
+            </p>
+          )}
         </Reveal>
 
         <Reveal delay={0.3}>
-          {submitted ? (
+          {encerrado ? (
+            <div className="border border-goldline bg-cream-light px-[clamp(40px,6vw,72px)] py-[clamp(56px,9vw,84px)]">
+              <div className="mb-4 font-display text-[clamp(28px,4vw,36px)] text-olive">
+                Confirmações encerradas
+              </div>
+              <p className="mx-auto max-w-[440px] font-body text-[18px] leading-[1.7] text-ink-soft">
+                O prazo para confirmar presença terminou em {EVENTO.rsvpPrazo}.
+                Obrigado a todos que confirmaram — nos vemos no dia!
+              </p>
+            </div>
+          ) : submitted ? (
             <div className="border border-goldline bg-cream-light px-[clamp(40px,6vw,72px)] py-[clamp(56px,9vw,84px)]">
               <div className="mb-4 font-display text-[clamp(30px,4vw,38px)] text-olive">
                 {confirmTitle}

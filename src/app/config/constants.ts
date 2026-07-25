@@ -11,7 +11,7 @@ export const EVENTO = {
   dataCurta: "25 · 10 · 2026",
   diaSemana: "Domingo",
   dataExtenso: "25 de outubro de 2026",
-  horario: "as 14 horas",
+  horario: "às 14 horas",
 
   local: {
     linha1: "Rua Ana Maria, 07",
@@ -21,6 +21,9 @@ export const EVENTO = {
   },
   presentesUrl: "https://www.finalfeliz.de/brunohadassa",
   rsvpPrazo: "5 de outubro de 2026",
+  // Limite para confirmar (fim do dia). Após isso, o form é substituído
+  // por um aviso de "confirmações encerradas". Mês é 0-indexado (9 = outubro).
+  rsvpPrazoData: new Date(2020, 0, 1, 23, 59, 59),
   cidadeFooter: "SBC",
 } as const;
 
