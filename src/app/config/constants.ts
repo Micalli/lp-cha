@@ -23,7 +23,7 @@ export const EVENTO = {
   rsvpPrazo: "5 de outubro de 2026",
   // Limite para confirmar (fim do dia). Após isso, o form é substituído
   // por um aviso de "confirmações encerradas". Mês é 0-indexado (9 = outubro).
-  rsvpPrazoData: new Date(2020, 0, 1, 23, 59, 59),
+  rsvpPrazoData: new Date(2026, 9, 5, 23, 59, 59),
   cidadeFooter: "SBC",
 } as const;
 
