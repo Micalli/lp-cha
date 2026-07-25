@@ -25,6 +25,9 @@ export function Detalhes() {
           <div className="font-display text-[22px] text-olive">
             {EVENTO.dataExtenso}
           </div>
+              <div className="font-display text-[22px] text-olive">
+            {EVENTO.horario}
+          </div>
         </RevealItem>
 
         <RevealItem className="border border-border bg-card px-7 py-10 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/60 hover:shadow-[0_16px_40px_-16px_rgba(85,88,59,0.35)]">

@@ -53,9 +53,9 @@ export function Hero() {
         </div>
 
         <motion.p
-          className="mt-11 font-body text-[11px] uppercase tracking-[0.3em] text-gold"
-          animate={{ opacity: [0.4, 1, 0.4] }}
-          transition={{ duration: 2.4, repeat: Infinity }}
+          className="mt-11 font-body text-[11px] uppercase tracking-[0.3em] text-gold font-semibold bounce animate-bounce"
+          animate={{ opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 2, repeat: Infinity }}
         >
           role para saber mais
         </motion.p>
