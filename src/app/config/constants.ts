@@ -7,23 +7,23 @@ export const EVENTO = {
   monograma: "H & B  ",
   titulo: "Chá de panela",
   // Alvo da contagem regressiva — Domingo, 18 de outubro de 2026, 12h
-  data: new Date(2026, 9, 18, 12, 0, 0),
-  dataCurta: "18 · 10 · 2026",
+  data: new Date(2026, 11, 8, 12, 0, 0),
+  dataCurta: "08 · 11 · 2026",
   diaSemana: "Domingo",
-  dataExtenso: "18 de outubro de 2026",
+  dataExtenso: "08 de novembro de 2026",
   horario: "às 14 horas",
 
   local: {
-    linha1: "Rua Ana Maria, 07",
-    linha2: "Montanhão — SBC (Associação dos moradores da vila mariana)",
+    linha1: "Rua Núncio Interlich, 69",
+    linha2: "Centro — SBC (Espaço e buffet)",
     mapsUrl:
-      "https://maps.app.goo.gl/eGR4K7dnxZB19WMPA",
+      "https://maps.app.goo.gl/w5k4uFYn1BACEtKM6",
   },
   presentesUrl: "https://www.finalfeliz.de/brunohadassa",
-  rsvpPrazo: "5 de outubro de 2026",
+  rsvpPrazo: "10 de outubro de 2026",
   // Limite para confirmar (fim do dia). Após isso, o form é substituído
   // por um aviso de "confirmações encerradas". Mês é 0-indexado (9 = outubro).
-  rsvpPrazoData: new Date(2026, 9, 5, 23, 59, 59),
+  rsvpPrazoData: new Date(2026, 10, 10, 23, 59, 59),
   cidadeFooter: "SBC",
 } as const;
 
