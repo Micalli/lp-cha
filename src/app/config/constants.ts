@@ -6,8 +6,8 @@ export const EVENTO = {
   noiva: "Hadassa",
   monograma: "H & B  ",
   titulo: "Chá de panela",
-  // Alvo da contagem regressiva — Domingo, 18 de outubro de 2026, 12h
-  data: new Date(2026, 11, 8, 12, 0, 0),
+  // Alvo da contagem regressiva — Domingo, 08 de outubro de 2026, 14h
+  data: new Date(2026, 11, 8, 14, 0, 0),
   dataCurta: "08 · 11 · 2026",
   diaSemana: "Domingo",
   dataExtenso: "08 de novembro de 2026",
