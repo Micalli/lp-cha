@@ -37,7 +37,7 @@ export function useRsvpController() {
   const first = (state.submittedName || "").trim().split(" ")[0];
   const confirmTitle = state.submitted ? `Que alegria, ${first}!` : "";
   const confirmMsg = state.submitted
-    ? "Sua presença está confirmada. Mal podemos esperar para celebrar com você no dia 25 de outubro."
+    ? "Sua presença está confirmada. Mal podemos esperar para celebrar com você no dia 08 de novembro."
     : "";
 
   async function handleSubmit(e: FormEvent) {
